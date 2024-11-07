@@ -4,6 +4,11 @@ import os
 
 app = Flask(__name__)
 
+# Додаємо маршрут для кореневого шляху
+@app.route('/')
+def index():
+    return "Flask сервер працює, все готово!"
+
 @app.route('/process', methods=['POST'])
 def process_request():
     try:
